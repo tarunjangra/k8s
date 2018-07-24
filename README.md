@@ -58,4 +58,23 @@ That will stop virtual machine running in virtual box.
 kubectl apply -f deployment.yml
 ```
 Make sure your VM is running while executing this command.
-23.
+23. Steps to get deployment working.
+  a. Make sure your minikube instance is working in virtual box. else start this.
+  ```
+  minikube start
+  ```
+  b. apply deployment through <deployment>.yml file containing all information of the container being deployed.
+  ```
+  kubectl apply -f <deployment>.yml
+  ```
+  That will pull the container and make it in running stage
+  c. Expose the port to get the access of choosen port
+  ```
+  kubectl expose deployment <deployment name> --type=NodePort
+  ```
+  d. Get the end of the service
+  ```
+  minikube service <deployment name> --url
+  ```
+  You are done
+24. 
