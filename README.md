@@ -55,7 +55,7 @@ That will stop virtual machine running in virtual box.
 
 22. Apply deployments
 ```
-kubectl apply deployment.yml
+kubectl apply -f deployment.yml
 ```
 Make sure your VM is running while executing this command.
 23.
