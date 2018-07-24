@@ -134,3 +134,23 @@ kubectl rollout status deployment <deployment-name>
 kubectl set image deployment/tomcat-deployment tomcat=tomcate:9.0.1
 ```
 Where tomcat is container name and tomcat:9.0.1 is tomcat container of specific version which need to be upgrade.
+35. Some Predefined labels provided by k8s
+  a. hostname,
+  b. operating system type
+  c. architecture
+```
+beta.kubernetes.io/arch=amd64
+beta.kubernetes.io/os=linux
+kubernetes.io/hostname=minikube
+node-role.kubernetes.io/master=
+```
+36. Label can help you to identify specific resource defined in the deployment. e.g you need to have ssd storage on specific container which need to be access faster. So you can find it with the help of defined labels. 
+37. Get history of different revisions of contianers done by new rolling out.
+```
+kubctl rollout history deployment tomcat-deployment #return all available revisions of rollouts
+kubectl rollout history deployment/tomcat-deployment --revision=<available revision>
+```
+38. Getting information about the node having all pods installed.
+```
+kubectl describe node minikube<name of node>
+```
