@@ -161,4 +161,31 @@ kubectl describe node minikube<name of node>
   a. Do succesfully http or tcp request to the pod.
   b. Do successful command execution on the Pod with the help of exit code. if exit code is 0, it suppose to be successful.
 41. There are two different type of checks are available to make the readyness of a pod container. First check is verification of Readness and second check is verification of liveness.
-42. 
+42. kubectl is great command line tool but some time you can also use web ui that can help you to visualise the whole environments.
+43. Setting up k8s dashboard ui
+```
+kubectl proxy
+```
+
+
+Job 1
+===
+
+1. Deploy and scale mongoDB
+2. It should be current version running on your kubernetes cluster with four replica
+3. mongodb default port 27017
+4. use mongodb latest docker image.
+
+Solution 1
+```
+kubectl run mongo-deployment --image=mongo:4.0 --port=27017
+kubectl scale --replicas=4 deployment/mongo-deployment
+```
+
+Solution 2
+1. Create deployment yaml file
+2. 
+```
+kubectl apply -f mongo-deployment.yaml
+```
+And you are done.
