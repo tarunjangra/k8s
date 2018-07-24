@@ -154,3 +154,11 @@ kubectl rollout history deployment/tomcat-deployment --revision=<available revis
 ```
 kubectl describe node minikube<name of node>
 ```
+39. Kubernetes has two type of health checks to ascertain two different things.
+  a. Rediness Probes: To determine when a pod is "ready" (e.g after it has started to see whan it's ready and has loaded what it needs to internally in the image and is ready to take requests from external services)
+  b. Liveness Probes: To determine when a pod is "health" or "unhealthy" after it has become ready.
+40. To verify healthness.
+  a. Do succesfully http or tcp request to the pod.
+  b. Do successful command execution on the Pod with the help of exit code. if exit code is 0, it suppose to be successful.
+41. There are two different type of checks are available to make the readyness of a pod container. First check is verification of Readness and second check is verification of liveness.
+42. 
