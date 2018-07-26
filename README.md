@@ -196,3 +196,14 @@ And you are done.
 DNS & Service Descovery
 ===
 
+1. Kuberneties has a built-in DNS service that is launched (and configure) automatically.
+2. K8s configures **kubelets** to tell individual containers to use the DNS service's IP to resolve DNS names.
+3. k8s provides preditable dns name.
+4. Every service in your kubernetes cluster gets a DNS name
+5. Kubernetes has a specific & consistent nomenclature for deciding what this DNS name is 
+   <my-service-name>.<my-namespace>.svc.cluster.local
+   service name is deployment name.
+6. But you can use thi swell-known pattern to design loosely coupled services or at least set "Sane-defaults"
+  1. One could use environment variables to set the DNS name of other services your app may need.
+  2. Or you could expect service at set DNS names.
+  3. Or combine the two above and expect service at well-known DNS names and allow environment variables to override ("conventions over configuration"). Like ruby on rails, node are also moving towards conventions over configuration method because names are highly predictable in this case.
