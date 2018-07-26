@@ -166,6 +166,8 @@ kubectl describe node minikube<name of node>
 ```
 kubectl proxy
 ```
+44. helm is an another tool which handle the most of kubernetes package manager work.
+
 
 
 Job 1
@@ -189,3 +191,8 @@ Solution 2
 kubectl apply -f mongo-deployment.yaml
 ```
 And you are done.
+
+
+DNS & Service Descovery
+===
+
