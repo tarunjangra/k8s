@@ -207,3 +207,5 @@ DNS & Service Descovery
   1. One could use environment variables to set the DNS name of other services your app may need.
   2. Or you could expect service at set DNS names.
   3. Or combine the two above and expect service at well-known DNS names and allow environment variables to override ("conventions over configuration"). Like ruby on rails, node are also moving towards conventions over configuration method because names are highly predictable in this case.
+7. kube-dns is the DNS which keep track of the given IP address and internal name of the service. and whenever ask it respond with the internal IP of the service.
+
