@@ -16,7 +16,7 @@ spec:
     tier: frontend
   type: LoadBalancer
 ---
-apiVersion: apps/v1beta2
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: wordpress
@@ -42,7 +42,7 @@ spec:
         - name: WORDPRESS_DB_HOST
           value: wordpress-mysql
         - name: WORDPRESS_DB_PASSWORD
-          value: PASSWORD_IN_SECURE_FILE
+          value: PASSWORD
         ports:
         - containerPort: 80
           name: wordpress-port
