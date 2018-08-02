@@ -1,3 +1,6 @@
+# We have declared two objects here. 
+# first is Service which will expose off service on port 3306
+# secondly we will define a pod. we will use mysql docker container 5.6
 apiVersion: v1
 kind: Service
 metadata:
@@ -10,7 +13,7 @@ spec:
   selector:
     app: wordpress
     tier: mysql
-  clusterIP: none
+  clusterIP: None
 ---
 apiVersion: apps/v1beta2
 kind: Deployment
@@ -30,14 +33,14 @@ spec:
       labels:
         app: wordpress
         tier: mysql
-      spec:
-        containers: 
-        - image: mysql:5.6
+    spec:
+      containers: 
+      - image: mysql:5.6
+        name: mysql
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: PASSWORD
+        ports:
+        - containerPort: 3306
           name: mysql
-          env:
-          - name: MYSQL_ROOT_PASSWORD
-            value: PASSWORD
-          ports:
-          - containerPort: 3306
-            name: mysql
             
